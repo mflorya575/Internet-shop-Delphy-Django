@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     # Приложения
     'core.apps.CoreConfig',
+    'userauths.apps.UserauthsConfig',
 
     # Сторонние библиотеки
 ]
