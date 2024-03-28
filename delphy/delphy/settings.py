@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',  # кастомная админ-панель
     # Встроенные настройки
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
 
     # Приложения
     'core.apps.CoreConfig',
+
+    # Сторонние библиотеки
 ]
 
 MIDDLEWARE = [
@@ -134,3 +137,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+JAZZMIN_SETTINGS = {
+    'site_header': 'You order, we deliver',
+    'site_brand': 'Delphy shop',
+    'site_logo': 'assets/imgs/theme/loading.gif',
+    'copyright': 'delphy-shop.com',
+}

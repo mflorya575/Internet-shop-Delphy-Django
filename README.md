@@ -6,3 +6,4 @@ Python 3.11
 Libraries:
 pip-24.0,
 django==4.2.8,
+django-jazzmin,
