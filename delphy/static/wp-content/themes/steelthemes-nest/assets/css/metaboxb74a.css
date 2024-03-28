@@ -1,0 +1,55 @@
+ 
+ #taxonomy-brands{
+     width: 10%;
+ }
+
+ .meta-box-sortables.ui-sortable    #taxonomy-brands  { width: unset;
+}
+ 
+.quantity input::-webkit-outer-spin-button,
+    .quantity input::-webkit-inner-spin-button {
+        display: none;
+        margin: 0;
+    }
+
+.quantity input.qty {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.wpclever-notice.notice{
+    display: none!important;
+}
+
+.admin-notice-debug_enabled h2 , .admin-notice-debug_enabled p{
+    color: #fff!important;
+}
+.admin-notice-debug_enabled{
+    background: red;
+}
+.redux-banner-inner-container{
+    display: none!important;
+}
+  
+.nest-leadin-banner{
+    background: var(--nest-color-brand-dark)!important;
+    color: #fff!important;
+}
+.nest-leadin-banner .notice-dismiss:before{
+    color: #fff;
+}
+
+.red_nest_motice{
+    background: red!important;
+    padding: 10px!important;
+}
+
+.custom-media-image{
+    width: 200px;
+}
+
+.fixed .column-taxonomy-brand , .fixed .column-woosw {
+    width: 9%;
+}
+
+
