@@ -1,3 +1,16 @@
 from django.shortcuts import render
 
-# Create your views here.
+from userauths.forms import UserRegisterForm
+
+
+def register_view(request):
+    if request.method == 'POST':
+        print('User registered')
+    else:
+        print('User cannot be registered')
+    form = UserRegisterForm()
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'userauths/sign-up.html', context)
