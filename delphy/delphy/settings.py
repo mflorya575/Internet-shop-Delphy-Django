@@ -41,11 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Сторонние библиотеки
+    'taggit',
+
     # Приложения
     'core.apps.CoreConfig',
     'userauths.apps.UserauthsConfig',
-
-    # Сторонние библиотеки
 ]
 
 MIDDLEWARE = [
