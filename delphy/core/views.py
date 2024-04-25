@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from taggit.models import Tag
 
 from core.models import Product, Category, Vendor, CartOrder, CartOrderItems, ProductImages, ProductReview, Wishlist, Address
-from django.db.models import Count
+from django.db.models import Count, Avg
 
 
 def index(request):
@@ -74,11 +74,19 @@ def product_detail_view(request, pid):
     # product = get_object_or_404(Product, pid=pid)
     products = Product.objects.filter(category=product.category).exclude(pid=pid)
 
+    # Getting all reviews related to a product
+    reviews = ProductReview.objects.filter(product=product).order_by('-date')
+
+    # Getting average review
+    average_rating = ProductReview.objects.filter(product=product).aggregate(rating=Avg('rating'))
+
     p_image = product.p_images.all()
 
     context = {
         'p': product,
         'p_image': p_image,
+        'average_rating': average_rating,
+        'reviews': reviews,
         'products': products,
     }
 
