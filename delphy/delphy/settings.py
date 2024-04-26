@@ -23,6 +23,35 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-=_ft&)^p2a$!2)v0anfx2f_$$$g^qqu^50c%e&=mo7+*(3npdp'
 
+
+# Указываем путь к папке, где будет храниться файл django.log
+LOGGING_PATH = os.path.join(BASE_DIR, 'logs')
+
+# Создаем папку logs, если она не существует
+if not os.path.exists(LOGGING_PATH):
+    os.makedirs(LOGGING_PATH)
+
+# Конфигурация журналирования
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(LOGGING_PATH, 'django.log'),
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
